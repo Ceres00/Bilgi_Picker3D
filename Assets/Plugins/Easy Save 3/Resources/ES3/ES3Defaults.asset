@@ -29,9 +29,13 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
-    - Assembly-CSharp-firstpass
     - Assembly-CSharp
+    - Assembly-CSharp-firstpass
     - Cinemachine
+    - RuntimeTestAssembly
+    - NonConvexCollider
+    - NonConvexColliderRuntimeAPI
+    - NonConvexEditor
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
