@@ -46,7 +46,7 @@ namespace Managers
 
         private void Init()
         {
-            ForceCommand = new ForceBallsToPoolCommand(this, _data.movementData);
+            ForceCommand = new ForceBallsToPoolCommand(this, _data.MovementData);
         }
 
         private PlayerData GetPlayerData()
@@ -56,8 +56,8 @@ namespace Managers
 
         private void SendDataToControllers()
         {
-            movementController.GetMovementData(_data.movementData);
-            meshController.GetMeshData(_data.scaleData);
+            movementController.GetMovementData(_data.MovementData);
+            meshController.GetMeshData(_data.ScaleData);
         }
 
         private void OnEnable()
@@ -108,7 +108,7 @@ namespace Managers
             movementController.IsReadyToMove(true);
         }
 
-        private void OnInputDragged(HorizontalInputParams inputParams)
+        private void OnInputDragged(HorizontalnputParams inputParams)
         {
             movementController.UpdateInputParams(inputParams);
         }
@@ -135,10 +135,11 @@ namespace Managers
 
         private void OnStageAreaSuccessful(int value)
         {
-            StageValue = (byte) ++value;
+            StageValue = (byte)++value;
             movementController.IsReadyToPlay(true);
             meshController.ScaleUpPlayer();
             meshController.ShowUpText();
+            meshController.PlayConfetiParticle();
         }
 
         private void OnFinishAreaEntered()

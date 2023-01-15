@@ -92,7 +92,6 @@ namespace Managers
 
         private void Start()
         {
-            Mathf.Clamp(totalLevelCount, 1, 5000);
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID % totalLevelCount);
             CoreUISignals.Instance.onOpenPanel?.Invoke(Enums.UIPanelTypes.Start, 1);
         }

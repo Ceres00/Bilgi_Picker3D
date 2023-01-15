@@ -16,6 +16,7 @@ namespace Controllers.Player
         [SerializeField] private PlayerManager manager;
         [SerializeField] private new Renderer renderer;
         [SerializeField] private TextMeshPro scaleText;
+        [SerializeField] private ParticleSystem confettiParticle;
 
         #endregion
 
@@ -34,7 +35,7 @@ namespace Controllers.Player
 
         internal void ScaleUpPlayer()
         {
-            renderer.gameObject.transform.DOScaleX(_data.scaleCounter, 1).SetEase(Ease.Flash);
+            renderer.gameObject.transform.DOScaleX(_data.ScaleCounter, 1).SetEase(Ease.Flash);
         }
 
         internal void ShowUpText()
@@ -44,6 +45,12 @@ namespace Controllers.Player
                 scaleText.rectTransform.DOAnchorPosY(-.85f, .65f).SetRelative(true));
         }
 
+        internal void PlayConfetiParticle()
+        {
+            confettiParticle.Play();
+            //confettiParticle.SetActive(true);
+            //DOVirtual.DelayedCall(2, () => confettiParticle.SetActive(false));
+        }
         internal void OnReset()
         {
         }
